@@ -1,0 +1,506 @@
+%-----------------------------------
+% Plan de test simplifié
+%
+% ProSE
+%
+% Auteurs : Thomas CRAVIC
+%
+%-----------------------------------
+
+\documentclass[a4paper,11pt,titlepage]{article}
+
+\usepackage[english,francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{xspace, graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{lastpage}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+
+%------------------------------------
+% Variables
+\newcommand{\version}{0.0}
+\newcommand{\revision}{0}
+\newcommand{\projectName}{Nom du Projet}
+\newcommand{\documentName}{Nom du document}
+\newcommand{\creator}{Clément Le Goffic}
+\newcommand{\creatorAbrev}{C. Le Goffic}
+\newcommand{\documentNameAbrev}{XXXX}
+\newcommand{\annee}{2022}
+\newcommand{\teamName}{Nom d'équipe}
+\newcommand{\prose}{ProSE}
+\newcommand{\teamNumber}{A?}
+\newcommand{\completer}{\textbf{A compléter}}
+
+%------------------------------------
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\graphicspath{{./figs/}}
+
+\setlength{\hoffset}{-40pt}
+
+\setlength{\topmargin}{-25pt}
+\setlength{\headsep}{10pt}
+
+\renewcommand{\headheight}{80pt}
+
+\renewcommand{\headwidth}{450pt}
+\setlength{\textwidth}{450pt}
+\setlength{\textheight}{604pt}
+
+\renewcommand{\footrulewidth}{0.1mm}
+
+\fancyhf{}
+        \fancyhead[LO]{\bf \includegraphics[width=80pt]{eseo.png}\\
+        						\medskip
+                                 {\prose} équipe {\teamNumber} {\annee}}
+         \fancyhead[RO]{\bf \includegraphics[width=40pt]{st.png}\\
+				\medskip
+				{\small{Ref. {\documentNameAbrev}\_E{\teamNumber}}}}
+         \fancyfoot[LO]{\sl {\it Version {\version} - Révision {\revision}}}
+         \cfoot{\copyright {\annee} {\teamName}}
+         \fancyfoot[RO]{\thepage/{\completer}}
+
+\setcounter{tocdepth}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+%----------------------------------------
+%       DOCUMENT
+%----------------------------------------
+
+\begin{document}
+
+%---------------------------------------
+
+\sloppy%
+% Modifie l’espacement vertical entre les lignes d’un tableau (tabular)
+\renewcommand{\arraystretch}{1.5}
+
+%---------------------------------------
+
+%\vspace{-2cm}%
+\begin{center}%
+\vspace*{1cm}
+\rule[0.5ex]{0.4\textwidth}{0.1mm}\\
+\vspace*{2mm}
+{\Huge {\textsc{\bf {\documentName}}}}
+\vspace{0.4cm}\\
+{\large\bf {\prose} {\teamNumber} {\annee} - {\teamName}}\\
+{\large\bf {\projectName}}
+
+\rule[0.5ex]{0.4\textwidth}{0.1mm}
+
+\vspace{1cm}
+
+\end{center}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Responsable du document & Xxxxxx Xxxxxx                \\
+État du document        & En cours de création         \\
+Version                 & {\version}  \\
+Révision                & {\revision} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2cm}
+\input{avertissement.tex} %Comment if not needed
+
+\newpage
+
+\input{TableVersions}
+
+\newpage
+
+%------------------------------- 
+
+\tableofcontents
+% alternative pour réduire l'espacement entre les entrées de la table des matières
+% (la valeur numérique peut être adaptée au besoin) : 
+%{\setlength{\baselineskip}{0.96\baselineskip}\tableofcontents\par}
+\newpage
+
+%-------------------------------
+% Ajouter toutes les parties les unes après les autres, séparées par un \newpage
+% Exemple : 
+% \input{Introduction}
+% \newpage
+\section{But}
+\subsection{Objectifs du document}
+Ce document est un Plan d’Assurance Qualité Logicielle (PAQL) visant à définir toutes les règles, 
+les méthodes et les outils utilisés dans le projet {\projectName} afin de définir et 
+contrôler la qualité du projet.\\
+Ce document poursuit les objectifs suivants :
+\begin{itemize}
+  \item Définir le niveau de qualité attendu par l’équipe projet pour le projet ProSE.
+  \item Définir les outils utilisés, les processus et procédures à suivre par l’équipe 
+  projet tant au niveau organisationnel que technique lors du projet ProSE.
+\end{itemize}
+Ce document est disponible sur le Référentiel Documentaire Projet(RDP) dans le répertoire 
+Qualité\slash Redaction\_PAQL sous le nom "{\documentName}".
+
+\subsection{Portée}
+Ce document est destiné à :
+\begin{itemize}
+  \item À l'équipe projet,
+  \item Aux consultants de la société FORMATO
+\end{itemize}
+
+\subsection{Copyright}
+Le présen document est la propriété de \completer
+
+\subsection{Vue d’ensemble}
+Ce PAQL est structuré suivant les grandes parties proposées par la norme [IEEE\-730\_1998].\\
+Il est donc décomposé en 24 parties.\\
+La norme IEEE 730 décrit le contenu d'un plan d'AQL pour un logiciel:
+\begin{itemize}
+  \item Intention et Portée
+  \item Définitions et Abréviations
+  \item Documents de références
+  \item Survol du plan d'assurance qualité Logicielle
+  \begin{itemize}
+    \item Organisation
+    \item Niveau de criticité du logiciel
+    \item Outils, techniques et méthodologies
+    \item Ressources
+    \item Normes, pratiques et conventions
+    \item Calendriers
+  \end{itemize}
+  \item Activités et tâches de cycle de vis de l'AQL
+  \begin{itemize}
+    \item Rôle de l'assurance de produit
+    \item Rôle de l'assurance du processus
+    \item Assurances sur les activités et les tâches du système de management de la qualité
+    \item Activités et tâches additionnelles
+  \end{itemize}
+  \item Processus et politiques additionnelles
+  \begin{itemize}
+    \item Processus de revue de contrat
+    \item Processus de mesure de la qualité
+    \item Politiques de tests
+    \item Politique de dérogation et de déviation
+    \item Politique d'itération des tâches
+  \end{itemize}
+  \item Enregistrements et rapports de l'AQL
+  \begin{itemize}
+    \item Enregistrements
+    \item Rapports
+  \end{itemize}
+\end{itemize}
+
+\subsection{Références}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{biblio.bib}
+
+\section{Gestion}
+Cette partie décrit l’organisation, les tâches et les responsabilités 
+en rapport avec les activités d’Assurance Qualité (AQ) du projet {\projectName}.
+
+\subsection{Organisation}
+
+\subsubsection{Projet concerné}
+Le projet \completer
+
+
+\subsubsection{Ressources humaines}
+
+\subsubsubsection{Équipe Projet}
+\input{equipeProjet.tex}
+
+\subsubsubsection{Client}
+\completer
+
+\subsubsubsection{Consultants et auditeurs}
+Si nécessaire, l'équipe projet pourra faire appel à la 
+société FORMATO en tant que support technique. 
+Les consultants et leurs compétences privilégiées sont :
+\begin{itemize}
+  \item Jérôme DELATOUR (spécification / conception) : jerome.delatour@eseo.fr
+  \item Matthias BRUN (codage / tests) : matthias.brun@eseo.fr
+  \item Camille CONSTANT (codage/tests) : camille.constant@eseo.fr
+\end{itemize}
+Des activités d’audits externes (cf. chapitre 5.3, page {\completer}) 
+seront menées par les auditeurs de la société FORMATO ou missionnées par elle.
+
+\subsection{Tâches du projet}
+\subsubsection{Tâches transversales}
+Les tâches transversales de l’assurance qualité incluent les activités suivantes :
+\begin{itemize}
+  \item Documentation (cf. chapitre 3, page 22).
+  \item Revues et audits (cf. chapitre 5 , page 31 )
+  \item Inspections internes
+  \item Validation et tests
+  \item Activités d’amélioration du processus d’AQ
+\end{itemize}
+
+\subsubsubsection{Inspections internes}
+\completer
+
+\subsubsubsection{Validation et test}
+Le Plan de test a pour objectif d’identifier les informations existantes du projet 
+et les composants qui doivent être testés. Il énumère les exigences d’évaluation à 
+différents niveaux, décrit les stratégies de test qui seront employées, identifie 
+les ressources nécessaires et met en évidence les biens livrables pour les tests.\\
+\completer
+\begin{itemize}
+  \item Portée du document, termes et abréviations
+  \item Références
+  \item Périmètre de test (composants concernés ou non par les tests, 
+  fonctionnalités testées ou non, critères d'acceptation des tests)
+  \item Processus et stratégie de test(activités, techniques, outils, 
+  procédures de test et gestion des anomalies)
+  \item Infrastructure de test
+  \item Documents de test et livrables
+  \item Responsabilités
+  \item Équipe de test
+  \item Planning prévisionnel
+\end{itemize}
+Cf : [Plan de test \completer]
+
+\subsubsubsection{Évolution et amélioration du PAQL}
+Le PAQL est susceptible d'évoluer au cours du projet, en particulier pour les raisons suivantes :
+\begin{itemize}
+  \item Toutes les informations nécessaires à la rédaction d'un chapitre 
+  ou d'un paragraphe ne sont pas connues ou suffisamment stabilisées lors de la rédaction.
+  \item Il s'agit d'une phase du cycle de développement qui sera engagée ultérieurement 
+  (cas de la mention « Rédaction réservée »).
+  \item Des événements techniques ou organisationnels nécessitant une prise en 
+  compte dans le PAQL peuvent apparaître lors du déroulement du projet (modification 
+  d'organisation, mise en place de nouvelles normes ou de procédures ou modification 
+  de normes ou procédures existantes, ...).
+\end{itemize}
+Le PAQL est rédigé par le Responsable Qualité et Test (RQT) de l’équipe projet. 
+Le Chef de Projet (CdP) et les RQT participent aux décisions de modifications. 
+Il incombe au RQT d’effectuer les modifications jugées nécessaires du PAQL. 
+En cas de modifications du PAQL, celui-ci devra être signé à nouveau par les 
+membres de l’équipe projet.
+
+\subsubsection{Tâches par rapport au cycle de développement}
+L’équipe projet suivra un cycle de développement en V en deux incréments. 
+Les activités d’AQ sont décrites par rapport à ce cycle. 
+Le planning et les échéances associées sont disponibles sur 
+l’Espace Numérique de Travail du Projet (ENTP).
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{cycle.png}
+  \caption{Diagramme du cycle de développement du projet}
+\end{figure}
+
+\subsubsubsection{Phase d'initialisation du projet}
+\begin{table}[]
+  \begin{tabular}{|lll|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{3}{|l|}{\cellcolor[HTML]{CCCCCC}\textbf{Phase : Initialisation}}                                                                                                                                                                                                                                                                   \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Objectifs :\\ 
+      Prendre en charge le projet, l’organiser, le planifier et en valider les bases.\\ 
+      Évaluer les actions nécessaires pour mettre en place le projet.\\ 
+      Échanger avec l'équipe sur les règles à définir.
+    \end{tabular}}                                                                                                                                                                                                                                 \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Remarques :\\
+    \end{tabular}}                                                                                                                                                                                                                                                                \\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Acteurs \& reponsabilités :\\ 
+      \tabitem CdP et RQT
+    \end{tabular}}&\multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Méthodes \& Règles :\\ 
+      \tabitem Règles pour l'utilisation\\ de l'ENTP\\
+      \tabitem Anticipation et organisation\\des deadlines personnelles
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      Moyens \& Outils :\\ 
+      \tabitem Initialisation du projet\\ sous ENTP
+    \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Activités \\ d'organisation/pilotage :\\ 
+      \tabitem Organisation de la \\réunion de lancement\\ 
+      \tabitem Organisation de la phase\\ en aval
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ production/soutien :\\ 
+        \tabitem Élaboration PAQL\\ 
+        \tabitem Mise en place de l’ENTP\\
+        \tabitem Définition de la démarche\\ du projet\\
+        \tabitem Initialisation du planning \\et du suivi du projet
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ vérification/contrôle :\\ 
+        \tabitem Réunion de lancement\\
+        \tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Produits/données en entrée :\\ 
+      \tabitem Wiki Prose et RedMine\\ 
+      \tabitem Documents pédagogiques\\
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Produits/données en sortie :\\ 
+        \tabitem Planning des tâches \\sur l'ENTP\\ 
+      \end{tabular}}           & 
+      \begin{tabular}[c]{@{}l@{}}
+        Produits révisés :\\ 
+        \tabitem PAQL
+      \end{tabular}\\ \hline
+  \multicolumn{3}{|l|}{\begin{tabular}[c]{@{}l@{}}
+    Jalons de la phase :\\ 
+    \tabitem J1 : \completer
+  \end{tabular}}                                                                                                                                                                                                                                                    \\ \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de début de phase :
+  \end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Condition \\ de fin de phase :
+  \end{tabular}} & 
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de passage à la \\phase suivante :
+  \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Nomination des CdP et RQT
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Truc\\ 
+        1
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Truc5\\ 
+        5
+      \end{tabular}\\ \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Responsabilité}
+\subsubsection{Définition Générale des rôles}
+\subsubsection{Récapitulatif des responsabilités client sur les phases}
+\subsubsection{Récapitulatif des responsabilités CdP sur les phases}
+\subsubsection{Récapitulatif des responsabilités RQ sur les phases}
+\subsubsection{Récapitulatif des responsabilités des développeurs sur les phases}
+\section{Documentation}
+\subsection{But}
+\subsection{Type de documents}
+\subsection{Référence des documents}
+\subsection{État d’un document}
+\subsection{Responsable du document}
+\subsection{Processus d’édition d’un document}
+\subsection{version d’un document}
+\subsection{Format des documents}
+\subsubsection{Modèle de document}
+\subsubsection{Artefact de code}
+\subsubsection{Règles de codage en langage C :}
+\subsubsection{Règles de traduction de la conception vers du code en langage C}
+\subsubsection{Règles de codage en langage Java}
+\subsubsection{Règles de traduction de la conception vers du code en Java}
+\subsection{documents internes}
+\section{Standards, pratiques, conventions et métriques}
+\subsection{But}
+\subsection{Exigences qualités générales}
+\subsection{Exigences qualités sur les artefacts}
+\subsubsection{Exigences sur les documents consultables par les auditeurs}
+\subsubsection{Exigences sur les documents livrables}
+\subsubsection{Exigences sur le code source}
+\section{Revues et Audits}
+\subsection{But}
+\subsection{Revues}
+\subsubsection{Revue de mi-avancement}
+\subsubsection{Revue de recette}
+\subsection{Audits}
+\subsubsection{Audit consultatif}
+\subsubsection{Audit normatif}
+\subsubsection{Inspection et revue croisée}
+\section{Test}
+\section{Notification des problèmes et corrections}
+\section{Outils, Techniques et Methodologie}
+\subsection{L’espace Numérique de Travail du Projet (ENTP)}
+\subsubsection{Redmine}
+\subsubsection{Planning prévisionnel}
+\subsubsection{Suivi du travail}
+\subsection{Liste des outils autorisés}
+\section{Contrôle des médias}
+\subsection{Communiquer entre membres internes du projet}
+\subsection{Gestion des médias, sources, références, copyright}
+\subsection{Communiquer avec des membres externes au projet}
+\subsubsection{Contacter les consultants}
+\subsubsection{Contacter le client}
+\section{Contrôle des fournisseur}
+\subsection{S'inscrire à une formation}
+\subsection{Demander un consulting}
+\section{Collecte, maintenance et conservation des archives}
+\subsection{Le Référentiel Documentaire Projet (RDP)}
+\subsubsection{Structuration du RDP}
+\subsubsection{Obtenir un accès au RDP}
+\subsubsection{Nom des fichiers des artefacts}
+\subsubsection{Déposer un artefact sur le RDP}
+\subsection{Gestion des documents papier}
+\section{Formation}
+\section{Gestion du risque}
+\section{Outils et configurations}
+\subsection{Réseau informatique}
+\subsection{Subversion}
+\section{Glossaire : Définitions, acronymes et abréviations}
+\section{Validation du document}
+
+
+\end{document}
+
+
+
+%--- END 
+
+% \end{document}
