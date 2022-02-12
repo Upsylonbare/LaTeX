@@ -1618,9 +1618,86 @@ Par exemple :
     \item Rédaction du dossier
   \end{itemize}
 \end{itemize}
+Ces phases servent à structurer le planning prévisionnel du projet. 
+A ce titre, les informations à saisir sont généralement 
+(à adapter selon les situations) :
+\begin{itemize}
+  \item titre et description
+  \item date de début et échéance
+  \item relation de dépendances avec d'autres phases projet (précède, suit, …)
+  \item saisie de temps
+\end{itemize}
+Les activités proprement dites sont suivies par le biais de demandes 
+de type « tâche ». Ces demandes sont nécessairement des sous-demandes 
+de demandes de type « Version ». Les demandes de type « tâche » :
+\begin{itemize}
+  \item ne doivent pas être hiérarchisées par rapport aux membres
+  \item doivent être affectées à une et une seule personne pour laquelle elle représente le travail à faire
+  \item sont dupliquées autant que nécessaire si plusieurs personnes effectuent le même travail
+\end{itemize}
+Pour le bon fonctionnement et une bonne gestion du projet, seul le chef de projet est 
+autorisé à modifier le planning prévisionnel. Le CdP est donc le seul responsable de 
+la concordance dans le temps du planning prévisionnel. Néanmoins, les autres membres 
+de l'équipe sont autorisés à modifier, ajouter/supprimer ou modifier une tâche tout 
+en respectant la structuration de tâches imposée par le CdP, et ceci pour garder une 
+cohérence dans l'ensemble des tâches réalisées au cours du projet.
 
 \subsubsection{Suivi du travail}
+\subsubsubsection{Une mise à jour immédiate sur le RDP}
+À chaque fois qu’un membre effectue un travail (en séance ou hors séance), 
+il doit saisir le temps qu’il y a consacré sur Redmine par le biais de 
+ses demandes de type "tâche" et compléter l’état d’avancement de la 
+demande. De plus, il devra alors déposer la nouvelle version de ces 
+artefacts projet sur le RDP.\\
+\underline{Remarque :} La seule preuve du temps consacré à une tâche est le dépôt 
+des artefacts. Un temps saisi sur Redmine sans dépôt associé peut ne 
+pas être pris en compte par le CdP ou les consultants lors des audits 
+"projet".\\
+De plus, une réunion d'équipe projet est organisée de façon hebdomadaire.\\
+Cette réunion a pour but de faire un point sur le travail de la semaine 
+effectuée et de tenir à jour l'avancée du projet et ainsi établir les objectifs 
+de la semaine à venir. Avant chacune de ces réunions, un ordre du jour est 
+envoyé à chacun des membres de l'équipe à minima 48h avant le début de la 
+réunion et chacun doit le lire et en prendre connaissance avant la réunion.
+Lors de chacune de ces réunions, un secrétaire est désigné pour rapporter 
+les éléments importants abordés et les publier sous forme de compte-rendu 
+sur le RDP dans le dossier gestion de projet.
+
+\subsubsubsection{Synthèse Personnelle}
+Une synthèse du temps passé (dite synthèse personnelle) devra être 
+régulièrement mis à jour sur le wiki de l'ENTP. Il sera demandé de 
+remplir définitivement et impérativement la synthèse personnelle 
+avant les audits individuels.\\
+Voici un exemple de synthèse personnelle :\\
+\\
+Prénom NOM\\
+Nombres totales d'heures travaillées :\\
+Spécifications => 29 h\\
+\begin{itemize}
+  \item IHM => 12h ; Définition des écrans Android et MAE
+  \item Rédaction Introduction de spécifications v3.0 [seul] => 2h
+  \item Relecture des CU  => 6h : CU Emprunter Objet, 
+  Rendre Objet, Manipuler Posto, Administrateur,
+  \item Mise en cohérence des CU entre eux => 6h
+  \item Travail en équipe sur l’ensemble des CU => 3h
+\end{itemize}
+Conception => 40h, responsable de la V1
+\begin{itemize}
+  \item CRC : 8h, en équipe avec Prénom Nom, ....
+  \item Diagramme de séquences : 8h : Emprunter Objet, connecter
+  \item MAE : 8h : MAE de l'IHM
+  \item \dots
+\end{itemize}
+Et ainsi de suite pour les activités de test, de gestion de la qualité, 
+de codage, de gestion de projet (pas à détailler) et de consulting (pas à détailler)...\\
+\completer
+
 \subsection{Liste des outils autorisés}
+Voici la liste de tous les outils que l’équipe projet 
+est autorisée à utiliser lors du projet.
+\completer
+
+
 \section{Contrôle des médias}
 \subsection{Communiquer entre membres internes du projet}
 \subsection{Gestion des médias, sources, références, copyright}
