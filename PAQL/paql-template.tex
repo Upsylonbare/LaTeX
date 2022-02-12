@@ -1270,39 +1270,355 @@ pourra se nommer "dossier\_de\_specification\_SPEC\_EXX".
 
 
 \subsection{État d’un document}
+\completer\\
+Les différents états d'un document sont :
+\begin{itemize}
+  \item \textbf{En création :} Document en cours de création
+  \item \textbf{En construction :} Document en cours de développement
+  \item \textbf{En relecture :} Docuement en attente de relecture
+  \item \textbf{En validation :} Docuement en attente de validation
+  \item \textbf{Version finale :} Document validé et livrable
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{etatsDoc.png}
+  \caption{Etats d'un document au cours du temps}
+\end{figure}
+
 \subsection{Responsable du document}
+Un seul membre d’une équipe est responsable d’un document. 
+Tout document doit avoir un responsable désigné. C’est ce responsable qui 
+suit l’évolution du document et ses différents états.\\
+
+C’est aussi le responsable qui gérera les cas où différents 
+membres d’une équipe désirent travailler en même temps sur la 
+même version d’un document dont il est le responsable. 
+Il lui appartient alors de mettre en œuvre la stratégie 
+qui lui semble la mieux adaptée, soit en :
+\begin{itemize}
+  \item Séquençant les mises à jour
+  \item Demandant à ce que les membres lui envoient leur version 
+  afin qu’il les intègre lui-même dans le document et qu’il 
+  le pose alors dans le RDP. (Dans ce dernier cas, chacun 
+  des contributeurs pose sa contribution sur le RDP avant intégration.)
+\end{itemize}
+\completer
+
 \subsection{Processus d’édition d’un document}
+\completer\\
+
+Le processus d'édition de document nous permet d'assurer un suivi en 
+continu sur les différents documents du projet et ainsi être 
+en mesure de réagir rapidement en cas de pertes d'informations 
+ou pour retrouver l'origine d'erreurs commises.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{processEdition.png}
+  \caption{Processus d'édition d'un document}
+\end{figure}
+
+
 \subsection{version d’un document}
+\completer\\
+Dans le PAQL ici présenté, il s’agit d’une version, sur 2 nombres X.Y.\\
+X s’incrémente à chaque validation d’un document (X s'incrémentera donc 
+au maximum jusqu'à 3). Y s'incrémente à chaque modification publiée du 
+document (chaque fois qu'une personne termine une phase de rédaction et 
+publie le document sur le RDP).\\
+
+Pensez à mettre à jour le numéro de version dans le tableau en tête de 
+document, ainsi que sur la page de couverture et sur les pieds de page. 
+L'indication du numéro de révision \footnote{Le numéro de version s'incrémente 
+automatiquement à chaque enregistrement du document.} 
+n'est pas nécessaire sur les pieds 
+de page des documents mais il convient de reporter le numéro de révision 
+en vis-à-vis de la version correspondante dans ce même tableau.\\
+
 \subsection{Format des documents}
+Pour tous les documents "livrables client" et "consultables auditeur", 
+il faut respecter un modèle de documents. Ces modèles 
+sont disponibles sur le RDP, dans le dossier Qualité.
+
 \subsubsection{Modèle de document}
+Des modèles de documents sont proposés suivant le sigle de ces documents. 
+Ces modèles doivent être impérativement utilisés. 
+Ils sont disponibles dans le RDP, dans le dossier « Qualite/Modeles ». 
+Tous les fichiers seront au format OpenDocument (modifiables et 
+lisibles avec LibreOffice). Veillez à activer le suivi des modifications 
+pour tous ces fichiers.
+
 \subsubsection{Artefact de code}
+\completer
+Dans le RDP, dossier « Qualite/Modeles », 
+les modèles d'artefact de code suivants sont disponibles :
+\begin{itemize}
+  \item example.h
+  \item example.c
+  \item example.java
+\end{itemize}
+Il est impératif que tous les codes source produits dans le projet 
+utilisent ces modèles et respectent les conventions de nommage qu’ils 
+proposent (détaillées ci-après). Il est impératif que les codes source 
+soient parfaitement commentés et ce en utilisant les balises au format 
+doxygen. Ce point est crucial, car il permet la génération automatique 
+de la documentation du code source de tout le projet.\\
+Avec ces fichiers modèles, vous trouverez également des 
+fichiers utilitaires dont l’utilisation est vivement recommandée.\\
+Afin de préciser certaines règles de codage qui sont difficiles à 
+illustrer dans les modèles précédemment cités, voici quelques exemples :
 \subsubsection{Règles de codage en langage C :}
+\completer
+
 \subsubsection{Règles de traduction de la conception vers du code en langage C}
+\completer\\
+Les règles de traduction de la conception vers du code C devront 
+impérativement suivre celles vues en cours avec les auditeurs ProSE.\\
+Cf : [Cours\_Programmation\_Avancé\_2016]
+
 \subsubsection{Règles de codage en langage Java}
+\completer\\
+
 \subsubsection{Règles de traduction de la conception vers du code en Java}
-\subsection{documents internes}
+\completer\\
+Les règles de traduction de la conception vers du code Java 
+devront impérativement suivre celles vues en cours avec les auditeurs ProSE.\\
+Cf : [Cours\_Programmation\_Avancé\_2016]
+
+\subsection{Documents internes}
+Tout document interne, n'étant pas considéré comme document livrable, 
+n'est pas soumis aux conventions de nommage ni de mise en forme. 
+Ces documents internes ne passeront pas par le processus d'édition de 
+document cité plus haut (pas de relecture ni de validation). Il est 
+entièrement de la responsabilité du responsable du document de vérifier 
+son contenu et expliciter synthétiquement son objectif dans son nommage 
+et sur l'ENTP.
 \section{Standards, pratiques, conventions et métriques}
 \subsection{But}
+Cette section décrit les standards, pratiques, conventions et métriques 
+utilisés pour le projet ProSE.  Ceux-ci ont pour but d’assurer la 
+qualité du logiciel tout en fournissant des données quantitatives 
+sur le processus d’AQ.
 \subsection{Exigences qualités générales}
+
+\begin{table}[H]
+  \begin{tabular}{|ll|}
+  \hline
+  \multicolumn{2}{|l|}{\cellcolor[HTML]{CCCCCC}Description des exigences qualité} \\ \hline
+  \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Liées au produit\\ (par ordre décroissant de priorité)\end{tabular}} &
+    \begin{tabular}[c]{@{}l@{}}1.    Conformité : le produit livré devra être conforme au dossier de spécification livré et livré dans les délais promis.\\ 2.    Maintenabilité (Aptitude du produit à permettre une maintenance facile, rapide et peu coûteuse).\\ 3.    Adaptabilité (Aptitude de la partie logicielle à supprimer ou modifier les fonctionnalités existantes, ou ajouter de nouvelles fonctionnalités).\\ 4.    Maniabilité (Aptitude du produit à être convivial et facile d’emploi pour l’utilisateur).\end{tabular} \\ \hline
+  \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Liées au processus\\ (par ordre décroissant de priorité)\end{tabular}} &
+    \begin{tabular}[c]{@{}l@{}}1.    Traçabilité.\\ 2.    Conformité (au présent PAQL et normes indiquées).\\ 3.    Simplicité.\end{tabular} \\ \hline
+  \end{tabular}
+\end{table}
+
+
 \subsection{Exigences qualités sur les artefacts}
+Pour tous les artefacts remis au client ou consultés par les auditeurs, 
+une gestion de version et un suivi des modifications devront être activés 
+afin de permettre la fourniture de n’importe quelle version d’un artefact 
+de ce type et de pouvoir identifier clairement les modifications apportées 
+entre 2 versions.
 \subsubsection{Exigences sur les documents consultables par les auditeurs}
+Concernant les documents "consultables auditeur", tous devront respecter 
+la même présentation et respecteront les mêmes modèles de document 
+disponibles dans le dossier /qualite/modeles du RDP.
+
 \subsubsection{Exigences sur les documents livrables}
+Tous les documents livrables, avant d’être remis au client devront avoir 
+été relus et corrigés. Hormis pour les artefacts de code, une version pdf 
+doit être disponible pour les livrables lors de leur livraison.\\
+Critère de qualité sur les documents livrables :
+\begin{itemize}
+  \item Respect du modèle de document et ses champs.
+  \item Pas plus de deux fautes d’orthographe par page du document.
+\end{itemize}
+Le document de spécification devra se baser sur la norme \cite[IEEE 830 [IEEE\-830\_1998] ]{830} 
+et utiliser la notation \cite[UML [UML\_2.4\_2011]]{UML}. 
+Le document de conception devra utiliser la notation \cite[UML [UML\_2.4\_2011]]{UML}.
 \subsubsection{Exigences sur le code source}
+
+Concernant les codes sources du projet, ils devront respecter les règles de programmation 
+et les conventions de nommage associées. Afin de permettre une meilleure maintenabilité 
+et lisibilité, ils seront documentés en utilisant des balises doxygen.\\
+Le code source livré devra être compilable et pouvoir produire un exécutable fonctionnel.\\
+\completer
+Il y aura au minimum les cinq balises suivantes dans les artefacts de code :
+\begin{itemize}
+  \item @file : le nom du fichier
+  \item @brief : le résumé du contenu du fichier
+  \item @version : la version du fichier
+  \item @date : la date de création du fichier
+  \item @author : le créateur du fichier et développeurs impliqués
+  \item @copyright : le lien vers la licence BSD
+\end{itemize}
+
 \section{Revues et Audits}
+
 \subsection{But}
+Cette section présente les actions d’audit interne, externe et de revue qui 
+pourront être menées afin d’évaluer la qualité du projet, et ce sur 
+différentes activités.
 \subsection{Revues}
 \subsubsection{Revue de mi-avancement}
+La revue de mi-avancement permet de présenter l’ensemble des actions menées 
+sur le premier incrément du cycle en V aux acteurs externes au projet. 
+Un ensemble de détails est présenté sur le Wiki ProSE à l’adresse : 
+[WikiProSE\_Exigences\_Pedagogiques\_SE]. Tous les membres de l’équipe 
+doivent être présents et intervenir durant la présentation. L’équipe disposera 
+de 20 minutes de présentation et de 5 minutes de démonstration, suivies de 
+25 minutes de questions.
 \subsubsection{Revue de recette}
+De même que pour la revue de mi-avancement, les précisions ont été faites 
+sur le site du Wiki ProSE à l'adresse [WikiProSE\_Exigences\_Pedagogiques\_SE]. 
+Tous les membres de l’équipe doivent être présents et intervenir durant la 
+présentation. L’équipe disposera de 20 minutes de présentation, dont 5 minutes 
+de démonstrations, suivies de 30 minutes de questions.
 \subsection{Audits}
+Des audits externes seront menés par les consultants FORMATO durant toute 
+la vie du projet. Un planning prévisionnel des audits est donné sur l’ENTP. 
+Toutefois, les dates d’audit ne sont données qu’à titre indicatif, les 
+auditeurs pouvant décaler leur audit d’une ou deux séances suivant leurs 
+disponibilités. L’ordre de passage des équipes des audits au cours d’une 
+séance n’est d’ailleurs jamais connu et reste à la discrétion de l’auditeur. 
+L’équipe est tenue de mettre à disposition un membre compétent lors des 
+audits externes.\\
+Il y a 2 types d'audits externes :
+\begin{itemize}
+  \item Les audits consultatifs
+  \item Les audits normatifs
+\end{itemize}
+Lors de chacun de ces audits, l'équipe devra fournir un membre ayant le rôle 
+de secrétaire qui prendra en notes les remarques et les changements à 
+effectuer qui seront cités lors de l'audit. Le compte-rendu de cet audit 
+sera déposé ensuite sur le RDP dans le dossier /gestion\_projet/audit sous 
+le nom :  "A(C ou N) JJ\-MM\-AAAA\_SANS\_EXX".
+
 \subsubsection{Audit consultatif}
+Les consultants vous donneront une indication sur le travail que vous avez 
+fait sous forme de code couleur (grade) sur l’avancement de votre projet. 
+La signification des grades est la suivante :
+\begin{itemize}
+  \item Le grade OR est attribué à des travaux de qualité exemplaire 
+  \item Le grade VERT est attribué à des travaux satisfaisants (de corrects à très bons)
+  \item Le grade ORANGE est attribué à des travaux présentant quelques lacunes mais ne portant pas de préjudice grave pour la suite du projet 
+  \item Le grade ROUGE est attribué à des travaux déficients, présentant des lacunes importantes et dommageables pour le projet.
+\end{itemize}
+L’audit consultatif n’est pas noté et n’est pas transmis au client.
+
 \subsubsection{Audit normatif}
+Cet audit nécessite une présentation soignée des documents audités. Il 
+faut à minima que les remarques faites lors de l'audit consultatif 
+correspondant aient été prises en compte et corrigées. Un code couleur 
+(le même que pour un audit consultatif) est attribué.\\
+
+Le rapport d’audit normatif est transmis au client et sera pris 
+en compte pour l'évaluation finale du projet.
+
 \subsubsection{Inspection et revue croisée}
+
+Pour les inspections internes, il convient de respecter les 
+règles énoncées dans le chapitre 3 \completer.
+
 \section{Test}
+\completer
+
 \section{Notification des problèmes et corrections}
+\completer
+La notification des problèmes, à toute étape du processus de 
+développement, se fait directement sur l’ENTP et ce par chacun 
+des membres de l’équipe. Cela se fait par l’émission d’une demande 
+de type « Bug » sur l’outil Redmine de l’ENTP.\\
+Les états possibles d'une demande Bug sont :
+\begin{itemize}
+  \item Nouveau
+  \item En cours
+  \item Fermé
+  \item Réouvert
+  \item Résolu
+\end{itemize}
+L'émission d'une telle demande se fera selon le formalisme 
+suivant qui permet de tracer les origines des dysfonctionnements :
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{MAEBug.png}
+  \caption{Machine à état du processus de traitement d'un dysfonctionnement}
+\end{figure}
+Lorsqu’un membre de l'équipe signale un bug, l'état du bug devient [\textbf{Nouveau}], 
+si le bug à déjà été déclaré, son état sera [\textbf{Réouvert}] , puis si le Bug est 
+pris en charge par un membre, l'état passe à [\textbf{En cours}]. Si la correction 
+arrive à terme, l'état suivant sera [\textbf{Résolu}]. Dans le cas où la correction 
+est impossible, due aux coûts, aux délais ou à des moyens techniques insuffisants, 
+l'état deviendra [\textbf{Non résolu}].\\
+
+C'est le chef de projet qui décidera de l'assignation des membres aux bugs qui 
+seront détectés. Le diagramme suivant permet d'illustrer l'activité des membres 
+impliqués lors d'une tâche de Debug :
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm]{ActiBug.png}
+  \caption{Diagramme d'activité expliquant le processus de traitement d'un dysfonctionnement}
+\end{figure}
+
 \section{Outils, Techniques et Methodologie}
 \subsection{L’espace Numérique de Travail du Projet (ENTP)}
+L’ENTP est un espace vous offrant les outils suivants :
+\begin{itemize}
+  \item Redmine : un gestionnaire de suivi de projet.
+  \item WikiProse : Wiki contenant un ensemble d’informations sur le projet ProSE, Wiki proposé par l’équipe pédagogique.
+  \item Le RDP (Réfentiel Document Projet) : C'est le dépôt subversion.
+\end{itemize}
+L'ENTP est accessible de la même façon à l'intérieur et à l'extérieur de l'ESEO.\\
+Les identifiants (login et mot de passe), lorsqu'ils sont réclamés, 
+correspondent à ceux créés sur Redmine au début du projet.\\
+Résumé des URL pour les différents composants de l'ENTP :
+
+\begin{table}[]
+  \begin{tabular}{|l|l|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  Composant       & URL                               \\ \hline
+  WikiProSE       & http://prose.eseo.fr/prose/       \\ \hline
+  Redmine         & http://prose.eseo.fr/redmine/     \\ \hline
+  Tableau de bord & http://prose.eseo.fr/prose-board/ \\ \hline
+  RDP             & \completer                        \\ \hline
+  \end{tabular}
+\end{table}
+
 \subsubsection{Redmine}
+Redmine est un gestionnaire de projet ayant comme fonctionnalités :
+\begin{itemize}
+  \item La gestion de plusieurs projets paramétrables
+  \item La gestion des utilisateurs
+  \item La gestion de documents
+  \item La gestion de demandes
+  \item Les priorités paramétrables d'une demande
+  \item Un historique
+  \item Un historique
+  \item La modulation fine des statuts et la gestion des transitions de statuts par rôle.
+  \item L'ajout de champs personnalisés
+  \item La gestion du temps
+\end{itemize}
+N’oubliez pas de vérifier tous les jours la page d’accueil, dans la 
+rubrique "Dernières Annonces". Vous pourrez y trouvez des 
+informations venant des consultants (ex : salle de formation, horaires, etc.).
+
 \subsubsection{Planning prévisionnel}
+\completer
+La version détaillée du planning prévisionnel est à saisir sur Redmine, 
+par le biais de demandes de type « Version ». Ces demandes sont à 
+hiérarchiser pour offrir une lecture du plus global au plus détaillé. 
+Par exemple :
+\begin{itemize}
+  \item Spécifications
+  \item \begin{itemize}
+    \item Cas d'utilisation
+    \item Cas d'utilisation stratégique
+    \item IHM
+    \item Rédaction du dossier
+  \end{itemize}
+\end{itemize}
+
 \subsubsection{Suivi du travail}
 \subsection{Liste des outils autorisés}
 \section{Contrôle des médias}
