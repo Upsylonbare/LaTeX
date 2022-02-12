@@ -25,6 +25,7 @@
 \usepackage{titlesec}
 \usepackage{float}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{color, soul}
 
 %------------------------------------
 % Variables
@@ -334,7 +335,8 @@ l’Espace Numérique de Travail du Projet (ENTP).
 \end{figure}
 
 \subsubsubsection{Phase d'initialisation du projet}
-\begin{table}[]
+\begin{table}[H]
+  \renewcommand{\arraystretch}{1.1}
   \begin{tabular}{|lll|}
   \hline
   \rowcolor[HTML]{CCCCCC} 
@@ -413,29 +415,860 @@ l’Espace Numérique de Travail du Projet (ENTP).
   \end{tabular}\\ \hline
   \multicolumn{1}{|l|}{
     \begin{tabular}[c]{@{}l@{}}
-      \tabitem Nomination des CdP et RQT
+      \tabitem Nomination des CdP et \\RQT
     \end{tabular}}& \multicolumn{1}{l|}{
       \begin{tabular}[c]{@{}l@{}}
-        Truc\\ 
-        1
+        \tabitem Validation des futurs \\livrables\\
+        \tabitem Validation de l'équipe \\du planning prévisionnel
       \end{tabular}}& 
       \begin{tabular}[c]{@{}l@{}}
-        Truc5\\ 
-        5
+        \tabitem ENTP opérationnel\\
+        \tabitem Attribution des rôles
       \end{tabular}\\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsubsection{Phase de spécification}
+Spécifications : Le dossier de spécification devra respecter le plan défini par la norme 
+\cite[IEEE\-830\_1998]{830} et s’appuyer sur la notation UML \cite[UML\_2.4\_2011]{UML}. 
+Deux audits (un consultatif et un normatif) porteront sur le dossier de 
+spécification. Le plan de test ainsi que le cahier de test de validation 
+seront établis durant cette étape de spécification. Deux audits 
+(un consultatif et un normatif) porteront sur cette activité. Une revue de 
+mi-avancement aura lieu pour présenter au client le dossier de spécification 
+et les éléments contractuels.
+
+\begin{table}[H]
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{|lll|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{3}{|l|}{\cellcolor[HTML]{CCCCCC}\textbf{PHASE : SPECIFICATION V1 \& V2}}                                                                                                                                                                                                                                                                   \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Objectifs :\\ 
+      Mener des activités d’exploration techniques afin d’évaluer la complexité et le temps \\
+      nécessaire à la réalisation du futur produit.\\ 
+      Présenter les principales fonctions, les performances requises, les exigences de \\
+      qualité et les contraintes de réalisation.\\ 
+      Faire la description complète de toutes les fonctionnalités des sous-ensembles du projet.\\
+	  Présenter le dossier final de spécification.\\
+	  Présenter le plan de test.\\
+	  Lancer les explorations techniques nécessaires au projet.
+    \end{tabular}}                                                                                                                                                                                                                                 \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Remarques :\\
+    \end{tabular}}                                                                                                                                                                                                                                                                \\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Acteurs \& reponsabilités :\\ 
+      \tabitem CdP et équipe\\
+	  \tabitem Client
+    \end{tabular}}&\multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Méthodes \& Règles :\\ 
+      \tabitem PAQL
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      Moyens \& Outils :\\ 
+      \tabitem ENTP
+    \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Activités \\ d'organisation/pilotage :\\ 
+      \tabitem Organiser les échanges \\d’informations avec le client 
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ production/soutien :\\ 
+        \tabitem Rédaction du dossier\\ de spécifications\\ 
+        \tabitem Rédaction du plan\\ de test\\
+        \tabitem Élaboration des \\maquettes des écrans\\
+        \tabitem Explorations technique\\
+		\tabitem \completer
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ vérification/contrôle :\\ 
+        \tabitem AC sur spécification\\
+        \tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Produits/données en entrée :\\ 
+      \tabitem Cahier des charges Client\\ 
+      \tabitem PAQL\\
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Produits/données en sortie :\\ 
+        \tabitem Dossier de spécifications\\
+		\tabitem Plan de test\\
+		\tabitem Contrat client\\
+      \end{tabular}}           & 
+      \begin{tabular}[c]{@{}l@{}}
+        Produits révisés :\\ 
+        \tabitem ENTP\\
+		    \tabitem Planning prévisionnel\\
+		    \tabitem Plan de test\\
+		    \tabitem PAQL
+      \end{tabular}\\ \hline
+  \multicolumn{3}{|l|}{\begin{tabular}[c]{@{}l@{}}
+    Jalons de la phase :\\ 
+    \tabitem J1 : \completer \\
+	\tabitem \\
+	\tabitem \\
+  \end{tabular}}                                                                                                                                                                                                                                                    \\ \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de début de phase :
+  \end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Condition \\ de fin de phase :
+  \end{tabular}} & 
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de passage à la \\phase suivante :
+  \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Initialisation effectuée
+    \end{tabular}}& \multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Validation des produits\\ en sortie
+      \tabitem Signature du client\\
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Dossier de spécifications \\signé par le client\\
+      \tabitem Plan de test validé\\
+    \end{tabular}\\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsubsection{Phase de conception}
+Conception générale (ou système) : Un audit consultatif 
+portera sur la conception générale.\\
+Conception détaillée : Un audit consultatif portera sur la conception détaillée.\\
+Un audit normatif portera sur la conception générale et détaillée.
+
+\begin{table}[H]
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{|lll|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{3}{|l|}{\cellcolor[HTML]{CCCCCC}\textbf{PHASE : Conception V1 \& V2}}                                                                                                                                                                                                                                                                   \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Objectifs :\\ 
+      Organiser et optimiser les temps de conception.\\ 
+      Définir l’architecture logicielle des applications.\\ 
+      Finaliser les ultimes explorations techniques et les intégrer au dossier.\\
+	  Décrire explicitement le dossier de conception.\\
+    \end{tabular}}                                                                                                                                                                                                                                 \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Remarques :\\
+	  \tabitem La conception générale peut commencer en parallèle des spécifications.
+    \end{tabular}}                                                                                                                                                                                                                                                                \\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Acteurs \& reponsabilités :\\ 
+      \tabitem CdP et équipe\\
+	  \tabitem Client
+    \end{tabular}}&\multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Méthodes \& Règles :\\ 
+      \tabitem PAQL\\
+	  \tabitem Dossier de spécification\\
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      Moyens \& Outils :\\ 
+      \tabitem ENTP
+    \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Activités \\ d'organisation/pilotage :\\ 
+      \tabitem Organiser les échanges \\d’informations avec le client 
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ production/soutien :\\ 
+        \tabitem Définition de l’architecture\\ technique\\
+        \tabitem Conception support de \\communication \\Rasberry/IPX800V4\\
+        \tabitem Conception logicielle\\
+        \tabitem Normalisation des fonctions\\
+		\tabitem Rédaction du dossier de \\conception\\
+		\tabitem Rédaction des tests de \\validation\\
+		\tabitem \completer
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ vérification/contrôle :\\ 
+        \tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Produits/données en entrée :\\ 
+      \tabitem Dossier de spécifications\\ 
+      \tabitem PAQL\\
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Produits/données en sortie :\\ 
+        \tabitem Dossier de conception\\
+      \end{tabular}}           & 
+      \begin{tabular}[c]{@{}l@{}}
+        Produits révisés :\\ 
+        \tabitem Normes de développement\\
+		\tabitem Dossier de spécifications\\
+		\tabitem PAQL
+      \end{tabular}\\ \hline
+  \multicolumn{3}{|l|}{\begin{tabular}[c]{@{}l@{}}
+    Jalons de la phase :\\ 
+    \tabitem J1 : \completer \\
+  \end{tabular}}                                                                                                                                                                                                                                                    \\ \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de début de phase :
+  \end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Condition \\ de fin de phase :
+  \end{tabular}} & 
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de passage à la \\phase suivante :
+  \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem \completer
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        \tabitem Validation des produits\\ en sortie
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        \tabitem Dossier de conception validé\\
+        \tabitem Normes de développement\\
+		\tabitem Tests de validation\\ rédigés
+      \end{tabular}\\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsubsection{Phase de réalisation}
+Codage : Quatre audits porteront sur le code source produit afin notamment 
+de s’assurer du bon respect du PAQL et des normes de programmation. 
+Deux porteront sur le code écrit en langage C sur cible embarquée 
+(consultatif et normatif) et deux autres sur le code fonctionnant sur la plate-forme Android.
+
+\begin{table}[H]
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{|lll|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{3}{|l|}{\cellcolor[HTML]{CCCCCC}\textbf{PHASE : Réalisation V1 \& V2}}                                                                                                                                                                                                                                                                   \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Objectifs :\\ 
+      Développer des applications logicielles.\\ 
+      Tester les applications logicielles définies lors de la phase de conception.\\ 
+      Coder les tests d'intégration et unitaires et adopter les outils de test.\\
+    \end{tabular}}                                                                                                                                                                                                                                 \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Remarques :\\
+	  \tabitem L’étape de réalisation peut commencer en parallèle de la conception.
+    \end{tabular}}                                                                                                                                                                                                                                                                \\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Acteurs \& reponsabilités :\\ 
+      \tabitem CdP et équipe\\
+    \end{tabular}}&\multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Méthodes \& Règles :\\ 
+      \tabitem PAQL\\
+	  \tabitem Dossier de spécification\\
+	  \tabitem Dossier de conception\\
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      Moyens \& Outils :\\ 
+      \tabitem ENTP\\
+	    \tabitem Moyen de test\\
+      \tabitem Testlink \& Eclipse\\ 
+    \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Activités \\ d'organisation/pilotage :\\ 
+      \tabitem Organiser les fonctions \\prioritaires\\
+	  \tabitem Organiser les échanges \\d'informations avec le client
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ production/soutien :\\ 
+		\tabitem \completer
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ vérification/contrôle :\\ 
+        \tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Produits/données en entrée :\\ 
+      \tabitem Dossier de conception\\ 
+      \tabitem PAQL\\
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Produits/données en sortie :\\ 
+        \tabitem Code\\
+		\tabitem Moyen de test opérationnel\\
+		\tabitem tests unitaires\\
+		\tabitem \completer
+      \end{tabular}}           & 
+      \begin{tabular}[c]{@{}l@{}}
+        Produits révisés :\\ 
+        \tabitem Normes de développement\\
+		\tabitem Dossier de spécifications\\
+		\tabitem Dossier de conception\\
+		\tabitem PAQL
+      \end{tabular}\\ \hline
+  \multicolumn{3}{|l|}{\begin{tabular}[c]{@{}l@{}}
+    Jalons de la phase :\\ 
+    \tabitem J1 : \completer \\
+  \end{tabular}}                                                                                                                                                                                                                                                    \\ \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de début de phase :
+  \end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Condition \\ de fin de phase :
+  \end{tabular}} & 
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de passage à la \\phase suivante :
+  \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem \completer
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        \tabitem Validation des produits\\ en sortie
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        \tabitem Application logicielle \\réalisée\\
+		\tabitem Tests réalisables
+      \end{tabular}\\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsubsection{Phase de test}
+Tests unitaires, tests d’intégration : Un audit consultatif 
+portera sur chacune de ces activités.\\
+Tests de validation : Un audit normatif portera sur 
+l’application des tests (validation, intégration et unitaire).\\
+
+\begin{table}[H]
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{|lll|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{3}{|l|}{\cellcolor[HTML]{CCCCCC}\textbf{PHASE : Test V1 \& V2}}                                                                                                                                                                                                                                                                   \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Objectifs :\\ 
+      Développer des tests fiables et efficaces.\\ 
+      Contrôler la fiabilité du logiciel.\\ 
+      Identifier les erreurs logiques.\\
+	  Vérifier interactions des interfaces.\\
+	  Valider l'adéquation aux spécifications du logiciel.\\
+    \end{tabular}}                                                                                                                                                                                                                                 \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Remarques :\\
+	  \tabitem La phase de programmation des tests peut commencer en parallèle de la réalisation
+    \end{tabular}}                                                                                                                                                                                                                                                                \\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Acteurs \& reponsabilités :\\ 
+      \tabitem CdP et Resp Test\\
+	  \tabitem Équipe de test
+    \end{tabular}}&\multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Méthodes \& Règles :\\ 
+      \tabitem PAQL\\
+	  \tabitem Conception\\
+	  \tabitem Spécification\\
+	  \tabitem Plan de test\\
+	  \tabitem Cahier de tests
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      Moyens \& Outils :\\ 
+      \tabitem ENTP\\
+	    \tabitem Moyen de test\\
+      \tabitem Testlink
+    \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Activités \\ d'organisation/pilotage :\\ 
+      \tabitem Vérification croisée\\
+	  \tabitem Organiser les tests \\principaux\\
+	  \tabitem \completer
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ production/soutien :\\ 
+		\tabitem Exécution tests de \\communication\\
+		\tabitem Compléter cahier de test\\
+		\tabitem Exécution  tests robustesse\\
+		\tabitem Exécution  tests unitaires\\
+		\tabitem Exécution  tests validation\\
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ vérification/contrôle :\\ 
+        \tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Produits/données en entrée :\\ 
+      \tabitem Application logicielle\\ 
+      \tabitem Dossier de conception\\
+	  \tabitem PAQL\\
+	  \tabitem Moyen de test\\
+	  \tabitem Cahier de test\\
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Produits/données en sortie :\\ 
+        \tabitem Document d'analyse des tests\\
+		\tabitem Application logicielle testée\\
+		\tabitem Cahier de test\\
+		\tabitem \completer
+      \end{tabular}}           & 
+      \begin{tabular}[c]{@{}l@{}}
+        Produits révisés :\\ 
+        \tabitem Normes de développement\\
+		\tabitem Document de conception\\
+		\tabitem Document de spécifications\\
+		\tabitem Code
+      \end{tabular}\\ \hline
+  \multicolumn{3}{|l|}{\begin{tabular}[c]{@{}l@{}}
+    Jalons de la phase :\\ 
+    \tabitem J1 : \completer \\
+  \end{tabular}}                                                                                                                                                                                                                                                    \\ \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de début de phase :
+  \end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Condition \\ de fin de phase :
+  \end{tabular}} & 
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de passage à la \\phase suivante :
+  \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Plan de test \\partiellement validé
+    \end{tabular}}& \multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Validation des produits\\ en sortie
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Tests réalisés\\
+      \tabitem Cahier de test complet
+    \end{tabular}\\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsubsection{Phase de recette}
+Une revue de recette aura lieu pour remettre au client le produit demandé, 
+ainsi que fournir les livrables suivants : les dossiers de spécification 
+et conception, l'ensemble des tests réalisés (cahier et plan de test), 
+les codes sources, les manuels d'utilisation et d'installation, le procès 
+verbal de recette définitive ainsi que l'application logicielle fonctionnelle.
+
+\begin{table}[H]
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{|lll|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{3}{|l|}{\cellcolor[HTML]{CCCCCC}\textbf{PHASE : Recette}}                                                                                                                                                                                                                                                                   \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Objectifs :\\ 
+      Réceptionner les applications de manière définitive\\
+    \end{tabular}}                                                                                                                                                                                                                                 \\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Remarques :\\
+	  \tabitem Se fera en même temps que la phase de bilan de fin de projet
+    \end{tabular}}                                                                                                                                                                                                                                                                \\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Acteurs \& reponsabilités :\\ 
+      \tabitem CdP et équipe\\
+	  \tabitem Client
+    \end{tabular}}&\multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Méthodes \& Règles :\\ 
+      \tabitem PAQL\\
+	  \tabitem Conception\\
+	  \tabitem Spécification\\
+	  \tabitem Intégration
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      Moyens \& Outils :\\ 
+      \tabitem ENTP
+    \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Activités \\ d'organisation/pilotage :\\ 
+      \tabitem Organiser les échanges \\d’informations avec le client
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ production/soutien :\\ 
+		\tabitem \completer		
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ vérification/contrôle :\\ 
+        \tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Produits/données en entrée :\\ 
+      \tabitem PAQL\\
+	  \tabitem Dossier de specification\\
+	  \tabitem Dossier de conception\\
+	  \tabitem Cahier de test\\
+	  \tabitem Code
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Produits/données en sortie :\\ 
+        \tabitem Application opérationnelle \\livrée\\
+		\tabitem Manuel d’utilisation et \\manuel d’installation validés\\
+		\tabitem Dernière version à jour \\des documents, codes \\source des applications \\(documenté sous Doxygen) \\et exécutables\\
+		\tabitem Procès verbal de recette \\définitive
+      \end{tabular}}           & 
+      \begin{tabular}[c]{@{}l@{}}
+        Produits révisés :\\ 
+        \tabitem Cahier de test\\
+		\tabitem Manuel d’utilisation\\
+		\tabitem Manuel d’installation\\
+		\tabitem Code source\\
+		\tabitem Recette\\
+		\tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{3}{|l|}{\begin{tabular}[c]{@{}l@{}}
+    Jalons de la phase :\\ 
+    \tabitem J1 : \completer \\
+  \end{tabular}}                                                                                                                                                                                                                                                    \\ \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de début de phase :
+  \end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Condition \\ de fin de phase :
+  \end{tabular}} & 
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de passage à la \\phase suivante :
+  \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Phase d’intégration terminée
+    \end{tabular}}& \multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Validation des produits\\ en sortie
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Fin du projet\\
+    \end{tabular}\\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsubsection{Phase de bilan de fin de projet}
+
+\begin{table}[H]
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{|lll|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{3}{|l|}{\cellcolor[HTML]{CCCCCC}\textbf{PHASE : Bilan Fin de Projet}}\\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Objectifs :\\ 
+      Clôturer le projet, archiver les productions, effectuez les statistiques du projet (temps passé), \\
+      tirer les enseignements du projet.\\
+    \end{tabular}}\\ \hline
+  \multicolumn{3}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Remarques :\\
+	  \tabitem Se fera en même temps que la phase de recette.
+    \end{tabular}}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Acteurs \& reponsabilités :\\ 
+      \tabitem CdP\\
+    \end{tabular}}&\multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Méthodes \& Règles :\\ 
+      \tabitem PAQL\\
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      Moyens \& Outils :\\ 
+      \tabitem ENTP\\
+    \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Activités \\ d'organisation/pilotage :\\ 
+      \tabitem Organiser les échanges \\d’informations avec le référent \\ESEO et M. Delatour
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ production/soutien :\\ 
+		\tabitem Rédaction des documents\\ de bilan\\	
+      \end{tabular}}& 
+      \begin{tabular}[c]{@{}l@{}}
+        Activités de \\ vérification/contrôle :\\ 
+        \tabitem Audit Interne\\
+		\tabitem \completer
+      \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      Produits/données en entrée :\\ 
+      \tabitem ENTP\\
+	  \tabitem Livrables client\\
+	  \tabitem RDP\\
+    \end{tabular}}& \multicolumn{1}{l|}{
+      \begin{tabular}[c]{@{}l@{}}
+        Produits/données en sortie :\\ 
+        \tabitem Statistiques projet\\
+		    \tabitem Compte-rendu de réunion\\ de bilan de projet\\
+		    \tabitem Synthèse enseignements projets\\
+		    \tabitem Propositions amélioration\\
+      \end{tabular}}           & 
+      \begin{tabular}[c]{@{}l@{}}
+        Produits révisés :\\ 
+        \tabitem ENTP\\
+		\tabitem Livrables\\
+		\tabitem RDP\\
+      \end{tabular}\\ \hline
+  \multicolumn{3}{|l|}{\begin{tabular}[c]{@{}l@{}}
+    Jalons de la phase :\\ 
+    \tabitem J1 : \completer \\
+  \end{tabular}}      \\ \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de début de phase :
+  \end{tabular}} & \multicolumn{1}{l|}{\cellcolor[HTML]{CCCCCC}
+  \begin{tabular}[c]{@{}l@{}}
+    Condition \\ de fin de phase :
+  \end{tabular}} & 
+  \begin{tabular}[c]{@{}l@{}}
+    Conditions \\ de passage à la \\phase suivante :
+  \end{tabular}\\ \hline
+  \multicolumn{1}{|l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Phase d’intégration terminée
+    \end{tabular}}& \multicolumn{1}{l|}{
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Validation des produits\\ en sortie
+    \end{tabular}}& 
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Fin du projet\\
+    \end{tabular}\\ \hline
   \end{tabular}
 \end{table}
 
 \subsection{Responsabilité}
 \subsubsection{Définition Générale des rôles}
+
+Chaque membre de l’équipe projet est tenu de respecter et d’appliquer les 
+normes du PAQL dans son travail.\\
+Chaque membre pourra avoir l’un des rôles suivants :
+\begin{itemize}
+  \item \textbf{Chef de projet (CdP) :} \completer
+  \item \textbf{Responsable Qualité et Test (RQT) :} \completer
+  \item \textbf{Développeur :} \completer
+  \item \textbf{Responsable Développeur C | Java (RD) :} \completer
+\end{itemize}
+
 \subsubsection{Récapitulatif des responsabilités client sur les phases}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{Phase} &
+    \textbf{Implication Client} &
+    \textbf{Implication Équipe Projet} \\ \hline
+  \textbf{Initialisation} &
+    \completer &
+    \tabitem \completer \\ \hline
+  \textbf{Spécification} &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Répondre aux questions \\concernant l'étude des besoins\\ 
+      \tabitem Valider l'IHM\\ 
+      \tabitem Fournir l'existant système \\si nécessaire\\ 
+      \tabitem Valider les dossiers
+    \end{tabular} 
+      &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Réaliser l'étude des besoins\\ 
+      \tabitem Rédiger le dossier de spécifications\\ 
+      \tabitem Rédiger le cahier de recette
+    \end{tabular} \\ \hline
+  \textbf{Conception} &
+    \tabitem \completer &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Rédiger le dossier de conception\\ 
+      \tabitem Rédiger le cahier de test
+    \end{tabular} \\ \hline
+  \textbf{Réalisation} &
+    \tabitem \completer &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Développer les modules logiciels\\ 
+      \tabitem Tests unitaires de l'application
+    \end{tabular} \\ \hline
+  \textbf{Test} &
+    \tabitem \completer &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Analyse des tests\\ 
+      \tabitem Vérification finale de l'application
+    \end{tabular} \\ \hline
+  \textbf{Recette} &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Valider le taux de \\fiabilité des tests\\ 
+      \tabitem Valider le fonctionnement \\global de l'application\\ 
+      \tabitem Valider l'ensemble des \\livrables reçus\\ 
+      \tabitem Signature du procès-verbal \\de recette définitive
+    \end{tabular} &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Rédaction du procès-verbal de recette\\ 
+      \tabitem Livrer l'ensemble des livrables
+    \end{tabular} \\ \hline
+  \textbf{\begin{tabular}[c]{@{}l@{}}Bilan de fin\\ de projet\end{tabular}} &
+    \tabitem \completer &
+    \begin{tabular}[c]{@{}l@{}}
+      \tabitem Faire une analyse et \\les statistiques du projet\\
+      \tabitem Proposer des améliorations\\ 
+      \tabitem Rédiger un rapport de fin de projet
+    \end{tabular} \\ \hline
+  \end{tabular}
+  \end{table}
+
 \subsubsection{Récapitulatif des responsabilités CdP sur les phases}
+
+\begin{table}[H]
+  \begin{tabular}{ll}
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{Phase}          & \textbf{Implication CdP}                                                          \\
+  \textbf{Initialisation} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Spécification}  & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Conception}     & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Réalisation}    & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Test}           & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Recette}        & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{\begin{tabular}[c]{@{}l@{}}Bilan de fin\\ de projet\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular}
+  \end{tabular}
+\end{table}
+
 \subsubsection{Récapitulatif des responsabilités RQ sur les phases}
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|}
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{Phase}          & \textbf{Implication RQT}                                                          \\
+  \textbf{Initialisation} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Spécification}  & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Conception}     & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Réalisation}    & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Test}           & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Recette}        & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{\begin{tabular}[c]{@{}l@{}}Bilan de fin\\ de projet\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular}
+  \end{tabular}
+\end{table}
+
 \subsubsection{Récapitulatif des responsabilités des développeurs sur les phases}
+
+\begin{table}[H]
+  \begin{tabular}{ll}
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{Phase}          & \textbf{Implication Équipe de Développement}                                                          \\
+  \textbf{Initialisation} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Spécification}  & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Conception}     & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Réalisation}    & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Test}           & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{Recette}        & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
+  \textbf{\begin{tabular}[c]{@{}l@{}}Bilan de fin\\ de projet\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular}
+  \end{tabular}
+\end{table}
+
 \section{Documentation}
 \subsection{But}
+Ce chapitre décrit les règles de gestion de la documentation du projet. 
+En effet, un certain nombre d’artefacts du projet concerne des documents.
+
 \subsection{Type de documents}
+Les documents suivants sont distingués suivant leur nature, 
+qu’ils soient livrés par le client ou non, consultables par 
+les auditeurs ou réservés à l’équipe projet, et ce suivant 
+la phase où ils sont produits.\\
+Les artefacts de documentation, nommés documents "livrables client" sont :
+\begin{itemize}
+  \item Dossier de spécification
+  \item Plan d'Assurance Qualité Logicielle (PAQL)
+  \item Contrat et devis
+  \item Dossier de conception
+  \item Plan de tests
+  \item Artefacts de code
+  \item Cahier de tests
+  \item Manuel d'utilisation et manuel d'installation
+  \item Présentation revue
+\end{itemize}
+Les artefacts consultables par les consultants, 
+nommés documents "consultables auditeur", sont :
+\begin{itemize}
+  \item Tous les documents "livrables client"
+  \item Ordre du jour réunion projet
+  \item Compte-rendu réunion client
+  \item Compte-rendu réunion projet
+  \item Correspondance échangée avec le client
+  \item Les codes sources des explorations techniques
+  \item Les codes sources
+  \item Les codes de test
+\end{itemize}
+Les autres documents du projet sont considérés comme internes au projet.
+
 \subsection{Référence des documents}
+La référence d’un document est de la forme suivante : 
+« SIGLE\_EXX », où XX désigne l’identifiant de l’équipe 
+(une lettre et un numéro) et le SIGLE correspond à 
+l’une des combinaisons de lettres citées ci-dessous.\\
+
+Ce système de référencement ne sera appliqué que pour 
+les livrables "consultables auditeur". Les ébauches et 
+documents internes à l'équipe échappent donc 
+à cette règle de nommage.\\
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{Réference}           & \textbf{Libellé Document}           \\ \hline
+  PAQL\_E{\teamNumber}          & Plan d'Assurance Qualité Logicielle \\ \hline
+  SPEC\_E{\teamNumber}          & Document de spécification           \\ \hline
+  CONC\_E{\teamNumber}          & Document de conception              \\ \hline
+  TEST\_E{\teamNumber}          & Document de test                    \\ \hline
+  BILAN\_E{\teamNumber}         & Bilan de projet                     \\ \hline
+  \completer                   & \completer                          \\ \hline
+  \completer                   & \completer                          \\ \hline
+  \completer                   & \completer                          \\ \hline
+  \completer                   & \completer                          \\ \hline
+  \completer                   & \completer                          \\ \hline
+  SANS\_E{\teamNumber}          & Pour tous les autres documents      \\ \hline
+  \end{tabular}
+\end{table}
+\tabitem \completer\\
+Par exemple, pour le dossier de spécification, produit par l’équipe XX, 
+sa référence sera la suivante : « SPEC\_EXX ».\\
+La référence d’un document permet d’identifier la catégorie à laquelle 
+appartient ce document, cette référence figurera dans le 
+document, mais aussi dans le nom de son fichier.\\
+Ainsi, dans l’exemple précédent, le fichier 
+pourra se nommer "dossier\_de\_specification\_SPEC\_EXX".
+
+
 \subsection{État d’un document}
 \subsection{Responsable du document}
 \subsection{Processus d’édition d’un document}
