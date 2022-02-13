@@ -9,7 +9,7 @@
 
 \documentclass[a4paper,11pt,titlepage]{article}
 
-\usepackage[english,francais]{babel}
+\usepackage[english,french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -26,9 +26,12 @@
 \usepackage{float}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{color, soul}
+\usepackage{fancyhdr}
 
 %------------------------------------
-% Variables
+%              Variables
+%              You must complete all these parameters to personnalize your document
+%------------------------------------
 \newcommand{\version}{0.0}
 \newcommand{\revision}{0}
 \newcommand{\projectName}{Nom du Projet}
@@ -40,29 +43,31 @@
 \newcommand{\teamName}{Nom d'équipe}
 \newcommand{\prose}{ProSE}
 \newcommand{\teamNumber}{A?}
-\newcommand{\completer}{\textbf{A compléter}}
-
 %------------------------------------
 
-\usepackage{fancyhdr}
+%------------------------------------
+%              Useful command 
+%------------------------------------
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\newcommand{\completer}{\textbf{A compléter}} %Write "A completer when needed"
+\newcommand{\ti}[1]{\begin{tabular}[c]{@{}l@{}}#1\end{tabular}} %Create a tab cell that takes cell text as parameter
+%What follows only concern double columns table :
+\newcommand{\tl}[2]{\ti{#1} & \ti{#2}} %Create a tab line that take two cell text as parameters
+%------------------------------------
 
+%------------------------------------
+%              Parameters for header and footer
+%------------------------------------
 \pagestyle{fancy}
-
 \graphicspath{{./figs/}}
-
 \setlength{\hoffset}{-40pt}
-
 \setlength{\topmargin}{-25pt}
 \setlength{\headsep}{10pt}
-
 \renewcommand{\headheight}{80pt}
-
 \renewcommand{\headwidth}{450pt}
 \setlength{\textwidth}{450pt}
 \setlength{\textheight}{604pt}
-
 \renewcommand{\footrulewidth}{0.1mm}
-
 \fancyhf{}
         \fancyhead[LO]{\bf \includegraphics[width=80pt]{eseo.png}\\
         						\medskip
@@ -75,18 +80,23 @@
          \fancyfoot[RO]{\thepage/{\completer}}
 
 \setcounter{tocdepth}{3}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titleclass{\subsubsubsection}{straight}[\subsection]
+%------------------------------------
 
+
+%----------------------------------------
+%             Parameters for adding a subsubsubsection, command and 
+%             make it appear in the tableofcontent
+%             It also modify the paragraph ans subparagraph command
+%----------------------------------------
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
 \newcounter{subsubsubsection}[subsubsection]
 \renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
 \renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
-
 \titleformat{\subsubsubsection}
   {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
 \titlespacing*{\subsubsubsection}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
 \makeatletter
 \renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
   {3.25ex \@plus1ex \@minus.2ex}%
@@ -103,11 +113,10 @@
 \def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
 \def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
 \makeatother
-
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+%------------------------------------
+
 
 %----------------------------------------
 %       DOCUMENT
@@ -119,7 +128,7 @@
 
 \sloppy%
 % Modifie l’espacement vertical entre les lignes d’un tableau (tabular)
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.1}
 
 %---------------------------------------
 
@@ -171,8 +180,8 @@ Révision                & {\revision} \\
 % Exemple : 
 % \input{Introduction}
 % \newpage
-\section{But}
-\subsection{Objectifs du document}
+\section{But}%#1
+\subsection{Objectifs du document}%#1.1
 Ce document est un Plan d’Assurance Qualité Logicielle (PAQL) visant à définir toutes les règles, 
 les méthodes et les outils utilisés dans le projet {\projectName} afin de définir et 
 contrôler la qualité du projet.\\
@@ -185,17 +194,17 @@ Ce document poursuit les objectifs suivants :
 Ce document est disponible sur le Référentiel Documentaire Projet(RDP) dans le répertoire 
 Qualité\slash Redaction\_PAQL sous le nom "{\documentName}".
 
-\subsection{Portée}
+\subsection{Portée}%#1.2
 Ce document est destiné à :
 \begin{itemize}
   \item À l'équipe projet,
   \item Aux consultants de la société FORMATO
 \end{itemize}
 
-\subsection{Copyright}
+\subsection{Copyright}%#1.3
 Le présen document est la propriété de \completer
 
-\subsection{Vue d’ensemble}
+\subsection{Vue d’ensemble}%#1.4
 Ce PAQL est structuré suivant les grandes parties proposées par la norme [IEEE\-730\_1998].\\
 Il est donc décomposé en 24 parties.\\
 La norme IEEE 730 décrit le contenu d'un plan d'AQL pour un logiciel:
@@ -234,31 +243,31 @@ La norme IEEE 730 décrit le contenu d'un plan d'AQL pour un logiciel:
   \end{itemize}
 \end{itemize}
 
-\subsection{Références}
+\subsection{Références}%#1.5
 
 \nocite{*}
 \bibliographystyle{plain}
 \bibliography{biblio.bib}
 
-\section{Gestion}
+\section{Gestion}%#2
 Cette partie décrit l’organisation, les tâches et les responsabilités 
 en rapport avec les activités d’Assurance Qualité (AQ) du projet {\projectName}.
 
-\subsection{Organisation}
+\subsection{Organisation}%#2.1
 
-\subsubsection{Projet concerné}
+\subsubsection{Projet concerné}%#2.1.1
 Le projet \completer
 
 
-\subsubsection{Ressources humaines}
+\subsubsection{Ressources humaines}%#2.1.2
 
-\subsubsubsection{Équipe Projet}
+\subsubsubsection{Équipe Projet}%#2.1.2.1
 \input{equipeProjet.tex}
 
-\subsubsubsection{Client}
+\subsubsubsection{Client}%#2.1.2.2
 \completer
 
-\subsubsubsection{Consultants et auditeurs}
+\subsubsubsection{Consultants et auditeurs}%#2.1.2.3
 Si nécessaire, l'équipe projet pourra faire appel à la 
 société FORMATO en tant que support technique. 
 Les consultants et leurs compétences privilégiées sont :
@@ -270,8 +279,8 @@ Les consultants et leurs compétences privilégiées sont :
 Des activités d’audits externes (cf. chapitre 5.3, page {\completer}) 
 seront menées par les auditeurs de la société FORMATO ou missionnées par elle.
 
-\subsection{Tâches du projet}
-\subsubsection{Tâches transversales}
+\subsection{Tâches du projet}%#2.2
+\subsubsection{Tâches transversales}%#2.2.1
 Les tâches transversales de l’assurance qualité incluent les activités suivantes :
 \begin{itemize}
   \item Documentation (cf. chapitre 3, page 22).
@@ -281,10 +290,10 @@ Les tâches transversales de l’assurance qualité incluent les activités suiv
   \item Activités d’amélioration du processus d’AQ
 \end{itemize}
 
-\subsubsubsection{Inspections internes}
+\subsubsubsection{Inspections internes}%#2.2.1.1
 \completer
 
-\subsubsubsection{Validation et test}
+\subsubsubsection{Validation et test}%#2.2.1.2
 Le Plan de test a pour objectif d’identifier les informations existantes du projet 
 et les composants qui doivent être testés. Il énumère les exigences d’évaluation à 
 différents niveaux, décrit les stratégies de test qui seront employées, identifie 
@@ -1149,16 +1158,17 @@ Chaque membre pourra avoir l’un des rôles suivants :
 \subsubsection{Récapitulatif des responsabilités CdP sur les phases}
 
 \begin{table}[H]
-  \begin{tabular}{ll}
+  \begin{tabular}{|l|l|}
   \rowcolor[HTML]{CCCCCC} 
-  \textbf{Phase}          & \textbf{Implication CdP}                                                          \\
-  \textbf{Initialisation} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Spécification}  & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Conception}     & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Réalisation}    & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Test}           & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Recette}        & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{\begin{tabular}[c]{@{}l@{}}Bilan de fin\\ de projet\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular}
+  \hline
+  \textbf{Phase}          & \textbf{Implication CdP}                       \\ \hline
+  \textbf{Initialisation} & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Spécification}  & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Conception}     & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Réalisation}    & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Test}           & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Recette}        & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{\ti{Bilan de fin\\ de projet}} & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
   \end{tabular}
 \end{table}
 
@@ -1166,31 +1176,33 @@ Chaque membre pourra avoir l’un des rôles suivants :
 
 \begin{table}[H]
   \begin{tabular}{|l|l|}
-  \rowcolor[HTML]{CCCCCC} 
-  \textbf{Phase}          & \textbf{Implication RQT}                                                          \\
-  \textbf{Initialisation} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Spécification}  & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Conception}     & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Réalisation}    & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Test}           & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Recette}        & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{\begin{tabular}[c]{@{}l@{}}Bilan de fin\\ de projet\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular}
+  \rowcolor[HTML]{CCCCCC}
+  \hline 
+  \textbf{Phase}          & \textbf{Implication RQT}                       \\ \hline
+  \textbf{Initialisation} & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Spécification}  & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Conception}     & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Réalisation}    & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Test}           & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Recette}        & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{\ti{Bilan de fin\\ de projet}} & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
   \end{tabular}
 \end{table}
 
 \subsubsection{Récapitulatif des responsabilités des développeurs sur les phases}
 
 \begin{table}[H]
-  \begin{tabular}{ll}
+  \begin{tabular}{|l|l|}
   \rowcolor[HTML]{CCCCCC} 
-  \textbf{Phase}          & \textbf{Implication Équipe de Développement}                                                          \\
-  \textbf{Initialisation} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Spécification}  & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Conception}     & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Réalisation}    & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Test}           & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{Recette}        & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular} \\
-  \textbf{\begin{tabular}[c]{@{}l@{}}Bilan de fin\\ de projet\end{tabular}} & \begin{tabular}[c]{@{}l@{}}\tabitem \completer\\ \tabitem \completer\end{tabular}
+  \hline
+  \textbf{Phase}          & \textbf{Implication Équipe de développement}   \\ \hline
+  \textbf{Initialisation} & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Spécification}  & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Conception}     & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Réalisation}    & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Test}           & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{Recette}        & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
+  \textbf{\ti{Bilan de fin\\ de projet}} & \ti{\tabitem \completer\\ \tabitem \completer} \\ \hline
   \end{tabular}
 \end{table}
 
@@ -1433,9 +1445,9 @@ Critère de qualité sur les documents livrables :
   \item Respect du modèle de document et ses champs.
   \item Pas plus de deux fautes d’orthographe par page du document.
 \end{itemize}
-Le document de spécification devra se baser sur la norme \cite[IEEE 830 [IEEE\-830\_1998] ]{830} 
-et utiliser la notation \cite[UML [UML\_2.4\_2011]]{UML}. 
-Le document de conception devra utiliser la notation \cite[UML [UML\_2.4\_2011]]{UML}.
+Le document de spécification devra se baser sur la norme IEEE 830 \cite[IEEE\-830\_1998]{830} 
+et utiliser la notation UML \cite[UML\_2.4\_2011]{UML}. 
+Le document de conception devra utiliser la notation UML \cite[UML\_2.4\_2011]{UML}.
 \subsubsection{Exigences sur le code source}
 
 Concernant les codes sources du projet, ils devront respecter les règles de programmation 
@@ -1573,7 +1585,7 @@ Les identifiants (login et mot de passe), lorsqu'ils sont réclamés,
 correspondent à ceux créés sur Redmine au début du projet.\\
 Résumé des URL pour les différents composants de l'ENTP :
 
-\begin{table}[]
+\begin{table}[H]
   \begin{tabular}{|l|l|}
   \hline
   \rowcolor[HTML]{CCCCCC} 
@@ -1694,34 +1706,311 @@ de codage, de gestion de projet (pas à détailler) et de consulting (pas à dé
 
 \subsection{Liste des outils autorisés}
 Voici la liste de tous les outils que l’équipe projet 
-est autorisée à utiliser lors du projet.
-\completer
+est autorisée à utiliser lors du projet.\\ 
+\completer Et adapter (conseil logiciel libre)
 
+\begin{table}[H]
+  \begin{tabular}{|l|l|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{Usage}                  & \textbf{Outil utilisé}                                                    \\ \hline
+  Traitement de texte             & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Tableur                         & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Diagramme UML                   & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Gestion de test                 & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Présentation/Soutenance de projet & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Gestion de version              & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Développement sous Android      & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Développement C/ Linux Embarqué & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  Documentation du code C et Java & \begin{tabular}[c]{@{}l@{}}\completer\\ Version : \completer\end{tabular} \\ \hline
+  \end{tabular}
+  \end{table}
 
 \section{Contrôle des médias}
 \subsection{Communiquer entre membres internes du projet}
+\completer\\
+Pour toute communication interne par mail, les messages devront 
+être envoyés en copie à l'adresse suivante :
+
 \subsection{Gestion des médias, sources, références, copyright}
+Pour tous les documents utilisés et créés par l'équipe XXX, l'utilisation 
+de sources externes au projet est autorisée à la seule condition que chaque 
+membre utilisant ces sources ait pris le soin de vérifier les droits 
+d'utilisation et de diffusion de cette source ainsi que les normes de 
+copyright associées. Dans le cas contraire, la source devra être 
+supprimée et remplacée.\\
+
+Pour l'utilisation d'image, schéma ou tout autre document non textuel, 
+une légende descriptive est à rajouter en dessous du document inséré.\\
+
+
 \subsection{Communiquer avec des membres externes au projet}
 \subsubsection{Contacter les consultants}
+Les consultants devront être contactés en priorité par mail.\\
+
+Les règles relatives au contact des consultants sont disponibles sur le wiki 
+ProSE, Onglet : /règles\_pour\_contacter\_client\_et\_consultants/Contacter\_les\_consultants.\\
+
+\completer
+Toute la correspondance avec les consultants doit être archivée dans le compte email suivant :\\
+
+Toute prise de rendez-vous de consulting se fait par une demande auprès 
+du CdP,  avec autorisation du CdP et reporting auprès du CdP pour garder 
+une trace des consulting effectués (pour permettre a minima au CdP de 
+tenir à jour la liste des dépenses de consulting. Tous ces consultings 
+seront reportés et mis à jour dans le document ....\\
+
 \subsubsection{Contacter le client}
-\section{Contrôle des fournisseur}
+\completer\\
+Toute la correspondance mail avec le client doit être archivée dans le compte mail suivant  :\\
+
+Pour garantir une communication optimum entre le client et l'équipe projet, 
+seul le chef de projet dispose des droits pour communiquer avec le client. 
+Les différents membres de l'équipe devront regrouper les questions pour le 
+client lors des réunions d'équipe hebdomadaires pour que le chef de projet 
+puisse les transmettre au client (en cas d'urgence, contacter le chef de 
+projet directement).\\
+
+De plus, pour chaque écriture d'un mail, le chef de projet demandera à 
+l'un de ses RQT une relecture de ce mail avant l'envoi au client.\\
+
+Une règle spécifique de gestion de mails a été mise en place sur ce compte 
+mail pour permettre d'archiver simplement et efficacement les échanges 
+avec le client et ainsi garder une traçabilité des informations.\\
+
+\section{Contrôle des fournisseurs}
+Le cabinet de conseil FORMATO forme et conseille les équipes des projets 
+ProSE. Ainsi, certaines formations sont obligatoires et gratuites, tandis 
+que d’autres sont payantes et facultatives. De plus, FORMATO propose 
+aussi un service consulting sur la plupart des domaines abordés durant 
+le projet. La liste des consultants et de leurs spécialités est disponible 
+au chapitre Consultants et Auditeurs tandis que les procédures d’inscription 
+aux formations et de demandes de consulting sont détaillées ci-après.
+
 \subsection{S'inscrire à une formation}
+Toute demande de formation doit être décidée en accord avec le CdP. 
+Ce dernier transmettra la demande d'inscription au plus tard 48 heures 
+avant le début de la formation.\\
+Toutes les demandes effectuées par le chef de projet sont enregistrées 
+et archivées dans un document spécifique. Les éléments suivants seront 
+à indiquer : la date, le sujet de formation, nom du formateur, durée, 
+nombre de membres inscrits, présence des membres inscrits.\\
+
 \subsection{Demander un consulting}
+Pour demander un consulting, il est important de prendre un rendez-vous 
+même si le consultant est planifié sur la séance ProSE. En dehors des 
+séances, les consultants ne sont pas nécessairement disponibles et il 
+faut impérativement envoyer une demande par email avec un préavis de 
+48h. Il est important de respecter les consignes de rédaction des mails 
+(le sujet doit respecter un format particulier. Les règles relatives au 
+contact des consultants sont disponibles sur le wiki ProSE, Onglet : 
+/règles\_pour\_contacter\_client\_et\_consultants/Contacter\_les\_consultants.\\
+
+\completer
+
+Tout consulting effectué par le chef de projet ou l'équipe est enregistré 
+et archivé dans un document spécifique par le chef de projet. Les 
+éléments suivants seront à indiquer : la date, le sujet de formation, 
+nom du formateur, durée ainsi que les coûts de consulting.\\
+
+Le suivi budget et temps consulting sera également inscrit dans la partie 
+"crédit de temps consulting" visible dans le tableau de bord de l'ENTP.\\
+
 \section{Collecte, maintenance et conservation des archives}
 \subsection{Le Référentiel Documentaire Projet (RDP)}
+Le RDP est le dépôt de tous les artefacts numériques du projet. Il 
+est impératif que tous les artefacts numériques produits lors du 
+projet y soient stockés sans délais. Ces artefacts seront pris en 
+charge par un système de gestion de version, de sorte qu’il sera 
+possible de revenir à n’importe quelle version de ces artefacts.
+
 \subsubsection{Structuration du RDP}
+\completer
+\begin{itemize}
+  \item Code : Contient tous les fichiers sources (C et Java), 
+  ainsi que les fichiers permettant leur édition, modification, 
+  déboggage, test et compilation. Les fichiers objets et 
+  exécutables n’y sont pas sauvegardés. Ce répertoire est 
+  décomposé en 3 dossiers :
+  \begin{itemize}
+      \item Exploration : Tous les fichiers utilisés en phase d’exploration. 
+      Ces fichiers ne sont pas soumis au respect des 
+      conventions de qualités du présent PAQL.
+      \item Production : Tous les fichiers permettant la réalisation 
+      des logiciels pour le client (toutes les versions)
+      \begin{itemize}
+          \item Android
+          \item Linux
+      \end{itemize}
+      \item Notice : Contient les notices pour configurer 
+      les SVN sur eclipse, jmeter, … etc
+  \end{itemize}
+  \item Conception
+  \begin{itemize}
+      \item Ébauches : Ce sont tous les fichiers utilisés au 
+      cours de la constitution des dossiers de conception.
+      \item Livrables : Documents dès qu’ils ont atteint 
+      une première fois l'état « diffusable » ainsi que 
+      toutes leurs révisions ultérieures.
+      \item Schémas : Toutes les sources des dessins ou 
+      fichiers UML produits lors de la phase 
+      de conception.
+  \end{itemize}
+  \item Gestion\_projet
+  \begin{itemize}
+      \item Client : Tous les documents en rapport avec le client.
+      \begin{itemize}
+          \item Contrat
+          \item Documentation
+          \item Mail
+      \end{itemize}
+      \item Planning : Les plannings du projet (en particulier ceux des audits et des formations)
+      \item Réunions : Compte-rendus des réunions.
+      \item Audit : Tous les compte-rendus  des différents audits.
+  \end{itemize}
+  \item Qualite : Cette partie regroupe tous les documents 
+  liés à la gestion de la qualité du projet.
+  \begin{itemize}
+      \item Redaction\_PAQL : Contient tout les documents qualité 
+      jugés nécessaires à la production/rédaction du PAQL.
+      \item Modèles : Modèle de document et modèles 
+      de codes à utiliser pendant le projet.
+  \end{itemize}
+  \item Spécifications : Même structuration que la conception.
+  \item Test : Regroupe tous les artefacts liés à l’activité de 
+  test (Cahier de test, Plan Test, Planning).
+  \begin{itemize}
+      \item Aide\_Instructions
+      \item Cahier\_test
+      \item Planning
+      \item Pland\_test
+  \end{itemize}
+\end{itemize}
+
 \subsubsection{Obtenir un accès au RDP}
+Pour obtenir un accès au RDP, il faut tout d’abord créer un compte 
+Redmine sur le site de ProSE : http://prose.eseo.fr/redmine/. Le premier accès 
+se fait avec les codes d'accès générique suivant :\\
+Login : prose\\
+Password : esorp\\
+Il  faut ensuite effectuer une création de compte Redmine en suivant 
+le lien suivant  : http://prose.eseo.fr/start. Après avoir suivi les 
+instructions, il faut ensuite importer une copie du RDP sur sa 
+machine (via « svn checkout ... »).\\
+
 \subsubsection{Nom des fichiers des artefacts}
+Seules des lettres non accentuées de l'alphabet latin 
+(haut de casse, bas de casse et tirets) sont autorisées pour 
+le nom du fichier. Le nom du fichier doit se terminer par la 
+référence du document (cf. chapitre 3.3, \completer).
 \subsubsection{Déposer un artefact sur le RDP}
+Pour assurer une traçabilité de qualité, certaines règles sont à 
+prendre en compte lors du dépôt d'un quelconque document sur le 
+RDP. Le dépôt de document important se fait de façon séparé, et 
+en aucun cas le commit simultané de plusieurs fichiers n'est 
+autorisé si les modifications ne sont pas identiques ou en lien 
+entre elles. De cette façon il sera aisé d'assigner un commentaire 
+de « commit » au document déposé, ce commentaire serra annoté d'un 
+sigle de la façon suivante :  [SIGLE] :  <Commentaire> :\\
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{SIGLE} & \textbf{Libellé document}                                           \\ \hline
+  CREAT          & Lors de la création du document et de l'ajout sur le RDP            \\ \hline
+  MAJ            & Apport d'une nouvelle version d'un document déjà présent sur le RDP \\ \hline
+  ATT-REL        & Document en attente de relecture                                    \\ \hline
+  ATT-VAL        & Docuement en attente de validation                                  \\ \hline
+  VALIDE         & Docuement validé                                                    \\ \hline
+  \end{tabular}
+\end{table}
+\completer
+
 \subsection{Gestion des documents papier}
+Afin de garder toutes traces du travail effectué, les documents 
+papier seront stockés dans une chemise intitulée : Projet ProSE – 
+EquipeXX, chemise conservée par le CdP.\\
+
+A l’intérieur, il sera retrouvé la même classification que le 
+premier niveau du RDP. Chaque document papier produit devra 
+contenir le nom et prénom de l’auteur du document ainsi que 
+la date de création et date de modification.\\
+
+Si cela est matériellement possible, l'auteur du document papier 
+pourra faire une copie numérisée du document et la déposer sur 
+le RDP pour en garder une trace supplémentaire\\
+
 \section{Formation}
+Si des compétences requises par le projet ne sont pas maîtrisées 
+par suffisamment de membres dans l’équipe, les membres veilleront 
+à acquérir ces compétences par le biais de lectures, de formations 
+entre les membres, par des consulting auprès des consultants 
+FORMATO ou par des participations à des formations proposées 
+par la société FORMATO.\\
+\completer
+
 \section{Gestion du risque}
+La gestion du risque au sein de notre projet va nous permettre de 
+pouvoir anticiper au maximum les risques techniques et humains 
+susceptibles de mettre le projet en péril.\\
+\completer
+
 \section{Outils et configurations}
 \subsection{Réseau informatique}
-\subsection{Subversion}
-\section{Glossaire : Définitions, acronymes et abréviations}
-\section{Validation du document}
+Le réseau informatique de l’ESEO vous permettra d'accéder à 
+internet ainsi qu’à tous les outils cités précédemment. Par 
+conséquent, les membres projet sont tenus de respecter la 
+charte informatique ESEO (déjà signé lors de l'entrée à l'ESEO).\\
 
+\subsection{Subversion}
+\completer
+
+\section{Glossaire : Définitions, acronymes et abréviations}
+\completer
+
+\begin{table}[H]
+  \begin{tabular}{|l|l|}
+  \hline
+  \rowcolor[HTML]{CCCCCC} 
+  \textbf{Acronyme}                          & \textbf{Définition}                                              \\ \hline
+  \ti{AP (Atefact Projet)}                   & \ti{Désigne tous les éléments numériques ou analogiques\\
+                                                produits lors du développement du projet\\
+                                                (documents numérique ou papier, code sources,\\ 
+                                                jeux de test…).}                                                \\ \hline
+  \ti{AQ (Assurance Qualité)}                & \ti{\completer}                                                  \\ \hline
+  \ti{AuC (Audit Consultatif)}               & \ti{\completer}                                                  \\ \hline
+  \ti{AuN (Audit Normatif)}                  & \ti{\completer}                                                  \\ \hline
+  \ti{CdP (Chef de Projet)}                  & \ti{Personnage clef du projet, il planifie, dirige, prend\\
+                                                   en charge la relation client, le suivi global du\\ 
+                                                   projet, l'aspect budgétaire et financier ainsi que \\
+                                                   les formations nécessaire à l'équipe}                        \\ \hline
+  \ti{ENTP (Espace Numérique \\
+      de Travail du Projet).}                & \ti{http://prose.eseo.fr/redmine/projects/se2017\\-equipea2}       \\ \hline
+  \ti{IEEE   (Institute of Electrical \\
+      and Electronics Engineers)}            & \ti{Association professionnelle internationale définissant\\
+                                                   entre autres des normes dans le domaine informatique\\
+                                                  et électronique.}                                             \\ \hline
+  \ti{OMG (Object Management Group)}         & \ti{Association professionnelle internationale définissant\\
+                                                   entre autres des normes dans le domaine informatique.}       \\ \hline
+  \ti{RQT (Responsable Qualité et Test)}     & \ti{\completer}                                                  \\ \hline
+  \ti{ProSE (Projet Système Embarqué)}       & \ti{\completer}                                                  \\ \hline
+  \ti{\completer}                            & \ti{\completer}                                                  \\ \hline
+  \ti{PAQL (Plan d’Assurance\\ 
+      Qualité Logicielle)}                   & \ti{\completer}                                                  \\ \hline
+  \ti{RDP (Référentiel Documentaire\\ 
+      Projet) }                              & \ti{Dépôt de tous les artefacts numériques du projet.\\ 
+                                                   Ce dépôt est mis à la disposition de l’équipe\\ 
+                                                   projet, ainsi qu’à l’équipe des consultants\\
+                                                   FORMATO.}                                                    \\ \hline
+  \ti{UML (Unified Modeling Language)}       & \ti{Notation graphique normalisée définie par l’OMG et\\
+                                                   utilisé en génie logiciel. }                                 \\ \hline
+   \end{tabular}
+\end{table}
+
+\section{Validation du document}
+Signature de tous les membres projets, précédée de la mention 
+"J’ai lu et je m’engage à respecter le présent PAQL pendant toute la durée du projet ProSE"
 
 \end{document}
 
