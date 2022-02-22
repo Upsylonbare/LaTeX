@@ -77,7 +77,7 @@
 				\medskip
 				{\small{Ref. {\documentNameAbrev}\_E{\teamNumber}}}}
          \fancyfoot[LO]{\sl {\it Version {\version} - Révision {\revision}}}
-         \cfoot{\copyright {\annee} {\teamName}}
+         \cfoot{\copyright {\annee} Droits réservés {\teamName}}
          \fancyfoot[RO]{\thepage/{\completer}}
 
 \setcounter{tocdepth}{3}
@@ -203,7 +203,8 @@ Ce document est destiné à :
 \end{itemize}
 
 \subsection{Copyright}%#1.3
-Le présen document est la propriété de \completer
+\input{avertissement.tex}
+
 
 \subsection{Vue d’ensemble}%#1.4
 Ce PAQL est structuré suivant les grandes parties proposées par la norme [IEEE\-730\_1998].\\
@@ -257,7 +258,8 @@ en rapport avec les activités d’Assurance Qualité (AQ) du projet {\projectNa
 \subsection{Organisation}%#2.1
 
 \subsubsection{Projet concerné}%#2.1.1
-Le projet \completer
+Le projet \completer\\
+Voir dossier de spécification.
 
 
 \subsubsection{Ressources humaines}%#2.1.2
@@ -266,16 +268,17 @@ Le projet \completer
 \input{equipeProjet.tex}
 
 \subsubsubsection{Client}%#2.1.2.2
-\completer
+Le Client est \completer
 
 \subsubsubsection{Consultants et auditeurs}%#2.1.2.3
 Si nécessaire, l'équipe projet pourra faire appel à la 
 société FORMATO en tant que support technique. 
 Les consultants et leurs compétences privilégiées sont :
 \begin{itemize}
-  \item Jérôme DELATOUR (spécification / conception) : jerome.delatour@eseo.fr
-  \item Matthias BRUN (codage / tests) : matthias.brun@eseo.fr
-  \item Camille CONSTANT (codage/tests) : camille.constant@eseo.fr
+  \item Jérôme DELATOUR (spécification / conception / qualité / gestion de projet) : jerome.delatour@eseo.fr
+  \item Matthias BRUN (codage android / tests) : matthias.brun@eseo.fr
+  \item Camille CONSTANT (qualité / tests) : camille.constant@eseo.fr
+  \item Frédéric JOUAULT (codage C / conception) : frederic.jouault@eseo.fr
 \end{itemize}
 Des activités d’audits externes (cf. chapitre 5.3, page {\completer}) 
 seront menées par les auditeurs de la société FORMATO ou missionnées par elle.
@@ -293,26 +296,29 @@ Les tâches transversales de l’assurance qualité incluent les activités suiv
 
 \subsubsubsection{Inspections internes}%#2.2.1.1
 \completer
+\\
+(Les activités à mener pous assurer que la qualité est tenue, audits réguliers tenue redmine
+ex qui va relire le PAQL)
 
 \subsubsubsection{Validation et test}%#2.2.1.2
-Le Plan de test a pour objectif d’identifier les informations existantes du projet 
-et les composants qui doivent être testés. Il énumère les exigences d’évaluation à 
-différents niveaux, décrit les stratégies de test qui seront employées, identifie 
-les ressources nécessaires et met en évidence les biens livrables pour les tests.\\
-\completer
-\begin{itemize}
-  \item Portée du document, termes et abréviations
-  \item Références
-  \item Périmètre de test (composants concernés ou non par les tests, 
-  fonctionnalités testées ou non, critères d'acceptation des tests)
-  \item Processus et stratégie de test(activités, techniques, outils, 
-  procédures de test et gestion des anomalies)
-  \item Infrastructure de test
-  \item Documents de test et livrables
-  \item Responsabilités
-  \item Équipe de test
-  \item Planning prévisionnel
-\end{itemize}
+% Le Plan de test a pour objectif d’identifier les informations existantes du projet 
+% et les composants qui doivent être testés. Il énumère les exigences d’évaluation à 
+% différents niveaux, décrit les stratégies de test qui seront employées, identifie 
+% les ressources nécessaires et met en évidence les biens livrables pour les tests.\\
+\completer (voir plan de test)
+% \begin{itemize}
+%   \item Portée du document, termes et abréviations
+%   \item Références
+%   \item Périmètre de test (composants concernés ou non par les tests, 
+%   fonctionnalités testées ou non, critères d'acceptation des tests)
+%   \item Processus et stratégie de test(activités, techniques, outils, 
+%   procédures de test et gestion des anomalies)
+%   \item Infrastructure de test
+%   \item Documents de test et livrables
+%   \item Responsabilités
+%   \item Équipe de test
+%   \item Planning prévisionnel
+% \end{itemize}
 Cf : [Plan de test \completer]
 
 \subsubsubsection{Évolution et amélioration du PAQL}
@@ -500,6 +506,7 @@ et les éléments contractuels.
       \begin{tabular}[c]{@{}l@{}}
         Activités de \\ vérification/contrôle :\\ 
         \tabitem AC sur spécification\\
+        \tabitem AN sur spécification (date)\\
         \tabitem \completer
       \end{tabular}\\ \hline
   \multicolumn{1}{|l|}{
@@ -1259,11 +1266,11 @@ documents internes à l'équipe échappent donc
   \hline
   \rowcolor[HTML]{CCCCCC} 
   \textbf{Réference}           & \textbf{Libellé Document}           \\ \hline
-  PAQL\_E{\teamNumber}          & Plan d'Assurance Qualité Logicielle \\ \hline
-  SPEC\_E{\teamNumber}          & Document de spécification           \\ \hline
-  CONC\_E{\teamNumber}          & Document de conception              \\ \hline
-  TEST\_E{\teamNumber}          & Document de test                    \\ \hline
-  BILAN\_E{\teamNumber}         & Bilan de projet                     \\ \hline
+  PAQL\_{\teamNumber}          & Plan d'Assurance Qualité Logicielle \\ \hline
+  SPEC\_{\teamNumber}          & Document de spécification           \\ \hline
+  CONC\_{\teamNumber}          & Document de conception              \\ \hline
+  TEST\_{\teamNumber}          & Document de test                    \\ \hline
+  BILAN\_{\teamNumber}         & Bilan de projet                     \\ \hline
   \completer                   & \completer                          \\ \hline
   \completer                   & \completer                          \\ \hline
   \completer                   & \completer                          \\ \hline
