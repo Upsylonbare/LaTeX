@@ -1,9 +1,10 @@
 %-----------------------------------
-% Plan de test simplifié
-%
+% Plan d'assurance qualité logicielle
+% Originalement écrit par Jérôme Delatour
+% Adapté en LaTeX par Clément Le Goffic en utilisant des artefacts de code de Camille Constant et Thomas Cravic
 % ProSE
 %
-% Auteurs : Thomas CRAVIC
+% Auteurs : J. Delatour, C. Constant, T.Cravic, C. Le Goffic
 %
 %-----------------------------------
 
@@ -36,8 +37,8 @@
 \newcommand{\revision}{0}
 \newcommand{\projectName}{Nom du Projet}
 \newcommand{\documentName}{Nom du document}
-\newcommand{\creator}{Clément Le Goffic}
-\newcommand{\creatorAbrev}{C. Le Goffic}
+\newcommand{\creator}{Nom du Créateur}
+\newcommand{\creatorAbrev}{Abrev Créateur}
 \newcommand{\documentNameAbrev}{XXXX}
 \newcommand{\annee}{2022}
 \newcommand{\teamName}{Nom d'équipe}
@@ -72,7 +73,7 @@
         \fancyhead[LO]{\bf \includegraphics[width=80pt]{eseo.png}\\
         						\medskip
                                  {\prose} équipe {\teamNumber} {\annee}}
-         \fancyhead[RO]{\bf \includegraphics[width=40pt]{st.png}\\
+         \fancyhead[RO]{\bf \includegraphics[width=40pt]{logo_entreprise.png}\\
 				\medskip
 				{\small{Ref. {\documentNameAbrev}\_E{\teamNumber}}}}
          \fancyfoot[LO]{\sl {\it Version {\version} - Révision {\revision}}}
@@ -1519,7 +1520,7 @@ La signification des grades est la suivante :
 L’audit consultatif n’est pas noté et n’est pas transmis au client.
 
 \subsubsection{Audit normatif}
-Cet audit nécessite une présentation soignée des documents audités. Il 
+Cet audit nécessite une présentation soignée des documents audités. Il
 faut à minima que les remarques faites lors de l'audit consultatif 
 correspondant aient été prises en compte et corrigées. Un code couleur 
 (le même que pour un audit consultatif) est attribué.\\
